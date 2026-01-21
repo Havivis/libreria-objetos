@@ -1,5 +1,5 @@
 //@author Paco Zahinos Duarte
-//@author Javier Rivera Delgad
+//@author Javier Rivera Delga
 public class Usuarios {
 
     private String nombre;
