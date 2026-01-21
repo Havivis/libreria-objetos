@@ -4,7 +4,7 @@ public class Usuarios {
 
     private String nombre;
     private String password;
-    private String rol; // "ADMIN" o "USUARIO"
+    private String rol; 
 
     public Usuarios(String nombre, String password, String rol) {
         this.nombre = nombre;
