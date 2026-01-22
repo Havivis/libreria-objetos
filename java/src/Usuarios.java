@@ -24,4 +24,9 @@ public class Usuarios {
     public String toString() {
         return "Usuario: " + nombre + " | Rol: " + rol;
     }
+
+    public Object getPassword() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPassword'");
+    }
 }
