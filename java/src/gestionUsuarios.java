@@ -1,35 +1,52 @@
- import java.util.Scanner;
-public class gestionUsuarios {
-   
+import java.util.Scanner;
 
+public class GestionUsuarios {
 
-    private static Usuario[] usuarios = new Usuario[10];
-    private static int totalUsuarios = 0;
+    private Usuarios[] usuarios;
+    private int contadorUsuarios;
 
-    public static void registrarUsuario(Usuario admin) {
-        if (!admin.getRol().equals("ADMIN")) {
-            System.out.println("Acceso denegado. Solo administradores.");
-            return;
-        }
+    public GestionUsuarios() {
+        usuarios = new Usuarios[10]; 
+        contadorUsuarios = 0;
 
-        Scanner sc = new Scanner(System.in);
+        // Usuarios de prueba
+        usuarios[contadorUsuarios++] = new Usuarios("admin", "admin123", "ADMIN");
+        usuarios[contadorUsuarios++] = new Usuarios("juan", "1234", "USER");
     }
 
-}
-    public static void listarUsuarios(Usuario admin) {
-        if (!admin.getRol().equals("ADMIN")) {
-            System.out.println("Acceso denegado. Solo administradores.");
-            return;
-        }
+    // Registrar usuario (ADMIN)
+    public void registrarUsuario() {
+        Scanner sc = new Scanner(System.in);
 
-        if (totalUsuarios == 0) {
-            System.out.println("No hay usuarios registrados.");
-            return;
-        }
+        System.out.print("Nombre de usuario: ");
+        String nombre = sc.nextLine();
 
-        System.out.println("Usuarios registrados:");
-        for (int i = 0; i < totalUsuarios; i++) {
+        System.out.print("Contraseña: ");
+        String password = sc.nextLine();
+
+        System.out.print("Rol (ADMIN / USER): ");
+        String rol = sc.nextLine().toUpperCase();
+
+        usuarios[contadorUsuarios++] = new Usuarios(nombre, password, rol);
+        System.out.println("Usuario registrado correctamente.");
+    }
+
+    // Mostrar usuarios (ADMIN)
+    public void mostrarUsuarios() {
+        System.out.println("Lista de usuarios:");
+        for (int i = 0; i < contadorUsuarios; i++) {
             System.out.println(usuarios[i]);
         }
     }
-    
+
+    // Login
+    public Usuarios login(String nombre, String password) {
+        for (int i = 0; i < contadorUsuarios; i++) {
+            if (usuarios[i].getNombre().equals(nombre) &&
+                usuarios[i].getPassword().equals(password)) {
+                return usuarios[i];
+            }
+        }
+        return null;
+    }
+}
