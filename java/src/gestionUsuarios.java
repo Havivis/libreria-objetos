@@ -13,34 +13,23 @@ public class gestionUsuarios {
         }
 
         Scanner sc = new Scanner(System.in);
-
-        System.out.print("Nombre de usuario: ");
-        String nombre = sc.nextLine();
-
-        System.out.print("Contraseña: ");
-        String password = sc.nextLine();
-
-        System.out.print("Rol (ADMIN / USUARIO): ");
-        String rol = sc.nextLine().toUpperCase();
-
-        usuarios[totalUsuarios] = new Usuario(nombre, password, rol);
-        totalUsuarios++;
-
-        System.out.println("Usuario registrado correctamente.");
     }
 
-    // Mostrar usuarios registrados (ADMIN)
-    public static void mostrarUsuarios(Usuario admin) {
+}
+    public static void listarUsuarios(Usuario admin) {
         if (!admin.getRol().equals("ADMIN")) {
             System.out.println("Acceso denegado. Solo administradores.");
             return;
         }
 
-        System.out.println("Listado de usuarios:");
+        if (totalUsuarios == 0) {
+            System.out.println("No hay usuarios registrados.");
+            return;
+        }
+
+        System.out.println("Usuarios registrados:");
         for (int i = 0; i < totalUsuarios; i++) {
             System.out.println(usuarios[i]);
         }
     }
-}
-
-
+    
