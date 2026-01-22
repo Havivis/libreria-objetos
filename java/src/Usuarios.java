@@ -40,8 +40,4 @@ public class Usuarios {
         return "Usuario: " + nombre + " | Rol: " + rol;
     }
 
-    public Object getPassword() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPassword'");
-    }
 }
