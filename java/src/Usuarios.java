@@ -16,6 +16,21 @@ public class Usuarios {
         return nombre;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public String getPassword() {
+        return password;
+    }
+    
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+
     public String getRol() {
         return rol;
     }
