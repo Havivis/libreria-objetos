@@ -11,7 +11,7 @@ public class GestionUsuarios {
 
         
         usuarios[contadorUsuarios++] = new Usuarios("admin", "admin123", "ADMIN");
-        usuarios[contadorUsuarios++] = new Usuarios("juan", "1234", "USER");
+        usuarios[contadorUsuarios++] = new Usuarios("Amador", "1234", "USER");
     }
 
     
@@ -50,3 +50,5 @@ public class GestionUsuarios {
         return null;
     }
 }
+
+
