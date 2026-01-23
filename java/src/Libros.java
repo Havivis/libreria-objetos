@@ -27,7 +27,7 @@ public class Libros {
     }
     private int generadId(){
         Random rd = new Random();
-        
-        
+        id = rd.nextInt(1000,9000);
+        return id;
     }
 }
