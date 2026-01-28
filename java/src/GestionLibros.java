@@ -11,6 +11,11 @@ public class GestionLibros {
 
         libros[contador++] = new Libros("El Quijote", "Cervantes");
         libros[contador++] = new Libros("1984", "George Orwell");
+        libros[contador++]= new Libros("El Principito", "Antonie de Saint-Exupéry");
+        libros[contador++] = new Libros("Berserk", "Kentaro Miura");
+        libros[contador++] = new Libros("El lazarillo de tomes", "Anónimo");
+        libros[contador++] = new Libros("Harry Potter", "J.K. Roulling");
+
     }
 
     public void agregarLibro() {
